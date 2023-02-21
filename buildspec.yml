@@ -7,8 +7,7 @@ phases:
   post_build:
     commands:
       - mvn package
-      - mv target/ROOT.war ROOT.war
+      - mv target/maven-archetype-webapp.war maven-archetype-webapp.war
 artifacts:
   files:
-    - ROOT.war
-    - .ebextensions/**/*
+    - maven-archetype-webapp.war
