@@ -10,4 +10,5 @@ phases:
       - mv target/maven-archetype-webapp.war maven-archetype-webapp.war
 artifacts:
   files:
-    - maven-archetype-webapp.war
+     - maven-archetype-webapp.war
+     - .ebextensions/**/*
