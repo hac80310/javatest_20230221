@@ -2,25 +2,13 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - echo "install > commands"
-    finally:
-      - echo "install > finally"
-  pre_build:
-    commands:
-      - echo "pre_build > commands"
-    finally:
-      - echo "pre_build > finally"
-  build:
-    commands:
-      - echo "build > commands"
-    finally:
-      - echo "build > finally"
+    runtime-versions:
+      java: corretto11
   post_build:
     commands:
-      - echo "post_build > commands"
-    finally:
-      - echo "post_build > finally"
+      - mvn package
+      - mv target/ROOT.war ROOT.war
 artifacts:
   files:
-    - ./**/*
+    - ROOT.war
+    - .ebextensions/**/*
