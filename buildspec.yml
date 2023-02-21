@@ -4,11 +4,16 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
   post_build:
     commands:
-      - mvn package
-      - mv target/maven-archetype-webapp.war maven-archetype-webapp.war
+      - echo Build completed on `date`
 artifacts:
   files:
-    - maven-archetype-webapp.war
-    - .ebextensions/**/*
+    - target/maven-archetype-webapp.jar
